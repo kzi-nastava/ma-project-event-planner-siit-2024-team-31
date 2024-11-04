@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EventPlannerMob_31</string>
+    <string name="home_screen">Home Screen</string>
+    <string name="register_screen">Register Screen</string>
+    <string name="login_screen">Login Screen</string>
+    <string name="splash_screen">Splash Screen</string>
+</resources>
