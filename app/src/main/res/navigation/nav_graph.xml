@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/mainPageFragment">
+
+    <fragment
+        android:id="@+id/mainPageFragment"
+        android:name="com.example.ep2024.fragments.MainPageFragment"
+        android:label="Main Page">
+        <action
+            android:id="@+id/action_mainPage_to_login"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_mainPage_to_registration"
+            app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_mainPage_to_myServices"
+            app:destination="@id/myServicesFragment" />
+        <action
+            android:id="@+id/action_mainPageFragment_to_eventInfoFragment"
+            app:destination="@id/eventInfoFragment">
+            <argument
+                android:name="event"
+                app:argType="com.example.ep2024.models.Event" />
+        </action>
+        <action
+            android:id="@+id/action_mainPageFragment_to_serviceProductInfoFragment"
+            app:destination="@id/serviceProductInfoFragment">
+            <argument
+                android:name="service"
+                app:argType="com.example.ep2024.models.Service" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.ep2024.fragments.LoginFragment"
+        android:label="Log in" />
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.ep2024.fragments.RegisterFragment"
+        android:label="Sign up" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.ep2024.fragments.ProfileFragment"
+        android:label="Profile" />
+
+    <fragment
+        android:id="@+id/myServicesFragment"
+        android:name="com.example.ep2024.fragments.MyServicesFragment"
+        android:label="My Services">
+        <action
+            android:id="@+id/action_myServicesFragment_to_editServiceFragment"
+            app:destination="@id/editServiceFragment" />
+        <action
+            android:id="@+id/action_myServicesFragment_to_createServiceFragment"
+            app:destination="@id/createServiceFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editServiceFragment"
+        android:name="com.example.ep2024.fragments.EditServiceFragment"
+        android:label="Service Editing">
+        <argument
+            android:name="service"
+            app:argType="com.example.ep2024.models.Service"
+            app:nullable="false" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/eventInfoFragment"
+        android:name="com.example.ep2024.fragments.EventInfoFragment"
+        android:label="Event Info">
+        <argument
+            android:name="event"
+            app:argType="com.example.ep2024.models.Event" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/serviceProductInfoFragment"
+        android:name="com.example.ep2024.fragments.ServiceProductInfoFragment"
+        android:label="Service Product Info">
+        <argument
+            android:name="service"
+            app:argType="com.example.ep2024.models.Service" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createServiceFragment"
+        android:name="com.example.ep2024.fragments.CreateServiceFragment"
+        android:label="Create Service" />
+
+</navigation>

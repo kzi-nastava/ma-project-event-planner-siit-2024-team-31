@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutMainPage"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- Top 5 Events -->
+                <TextView
+                    android:id="@+id/textViewTopEvents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/top_5_events"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:padding="12dp"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/black"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewTopEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never" />
+
+                <!-- Search and Filter for Events -->
+                <EditText
+                    android:id="@+id/editTextSearchEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/search_events"
+                    android:drawableEnd="@drawable/ic_search"
+                    android:layout_marginTop="16dp"
+                    android:padding="12dp"
+                    android:background="@color/white"
+                    android:textColor="@color/black"
+                    />
+
+                <!-- Full List of Events -->
+                <TextView
+                    android:id="@+id/textViewAllEvents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/all_events"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:padding="12dp"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/black"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewAllEvents"
+                    android:layout_width="match_parent"
+                    android:layout_height="480dp"
+                    android:layout_marginTop="8dp"
+                    android:nestedScrollingEnabled="true"
+                    android:overScrollMode="always"
+                    android:scrollbarAlwaysDrawHorizontalTrack="true"
+                    />
+
+                <Button
+                    android:id="@+id/buttonLoadMoreEvents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_load_more"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingHorizontal="24dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:textColor="@android:color/white" />
+
+                <!-- Top 5 Services -->
+                <TextView
+                    android:id="@+id/textViewTopServices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/top_5_services"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:padding="12dp"
+                    android:layout_marginTop="24dp"
+                    android:textColor="@color/black"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewTopServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never" />
+
+                <!-- Search and Filter for Services -->
+                <EditText
+                    android:id="@+id/editTextSearchServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/search_services"
+                    android:drawableEnd="@drawable/ic_search"
+                    android:layout_marginTop="16dp"
+                    android:padding="12dp"
+                    android:background="@color/white"
+                    android:textColor="@color/black"/>
+
+                <!-- Full List of Services -->
+                <TextView
+                    android:id="@+id/textViewAllServices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/all_services"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:padding="12dp"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/black"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewAllServices"
+                    android:layout_width="match_parent"
+                    android:layout_height="480dp"
+                    android:layout_marginTop="8dp"
+                    android:nestedScrollingEnabled="true"
+                    android:overScrollMode="always"
+                    android:scrollbarAlwaysDrawHorizontalTrack="true"/>
+
+                <Button
+                    android:id="@+id/buttonLoadMoreServicesProducts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_load_more"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingHorizontal="24dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:textColor="@android:color/white"
+                    android:layout_marginBottom="48dp"/>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

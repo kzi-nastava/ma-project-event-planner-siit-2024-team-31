@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollViewEditService"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutEditService"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editTextServiceName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Название услуги" />
+
+        <EditText
+            android:id="@+id/editTextServiceDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Описание"
+            android:inputType="textMultiLine"
+            android:lines="3" />
+
+        <EditText
+            android:id="@+id/editTextServiceCharacteristics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Характеристики"
+            android:inputType="textMultiLine"
+            android:lines="3" />
+
+        <EditText
+            android:id="@+id/editTextServicePrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Цена"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/editTextServiceDiscount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Скидка (%)"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/textViewServiceCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Категория: "
+            android:textStyle="bold"
+            android:paddingTop="8dp" />
+
+        <TextView
+            android:id="@+id/textViewSelectEventTypes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Типы событий"
+            android:textStyle="bold"
+            android:paddingTop="8dp" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutEventTypes"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/switchServiceVisibility"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Видимый для организаторов"
+            android:checked="true" />
+
+        <Switch
+            android:id="@+id/switchServiceAvailability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Доступен для бронирования"
+            android:checked="true" />
+
+        <EditText
+            android:id="@+id/editTextBookingDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Продолжительность бронирования (минуты)"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editTextMinParticipation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Минимальное участие (минуты)"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editTextMaxParticipation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Максимальное участие (минуты)"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editTextBookingPeriod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Срок бронирования (дни заранее)"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/editTextCancellationPeriod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Срок отмены бронирования (дни до)"
+            android:inputType="number" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupConfirmationMethod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioButtonAutomatic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Автоматическое подтверждение" />
+
+            <RadioButton
+                android:id="@+id/radioButtonManual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ручное подтверждение" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/buttonUploadImages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Изменить изображения" />
+
+        <Button
+            android:id="@+id/buttonSaveService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Сохранить"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/buttonDeleteService"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Удалить услугу"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/holo_red_dark" />
+
+    </LinearLayout>
+</ScrollView>
