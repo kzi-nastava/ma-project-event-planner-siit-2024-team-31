@@ -8,8 +8,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var navController: NavController
-    lateinit var navView: BottomNavigationView
+    private lateinit var navController: NavController
+    private lateinit var navView: BottomNavigationView
 
     var isLoggedIn: Boolean = false
     var userRole: String = "NK"
