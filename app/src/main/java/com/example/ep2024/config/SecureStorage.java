@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import androidx.security.crypto.EncryptedSharedPreferences;
 import androidx.security.crypto.MasterKeys;
 
-public class SecureStorage {
+public class SecureStorage{
     private static final String PREFS_FILENAME = "secure_prefs";
     private final SharedPreferences sharedPreferences;
 
@@ -31,4 +31,9 @@ public class SecureStorage {
     public String getUser() {
         return sharedPreferences.getString("user", null);
     }
+
+    public void clearUser() {
+        sharedPreferences.edit().remove("user").apply();
+    }
+
 }

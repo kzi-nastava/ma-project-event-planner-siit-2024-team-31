@@ -1,12 +1,14 @@
-package com.example.ep2024.data.model;
+package com.example.ep2024.data.model.responseDTOs.auth;
+
+import androidx.annotation.NonNull;
 
 import com.example.ep2024.domain.model.Role;
 
-public class UserLoginResponse {
+public class LoginResponseDTO {
     private final String token;
     private final String role;
 
-    public UserLoginResponse(String token, String role) {
+    public LoginResponseDTO(String token, String role) {
         this.token = token;
         this.role = role;
     }

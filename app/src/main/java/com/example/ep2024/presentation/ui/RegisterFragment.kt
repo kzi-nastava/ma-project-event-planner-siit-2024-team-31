@@ -78,8 +78,8 @@ class RegisterFragment : Fragment() {
                 }
             }
 
-            (activity as MainActivity).isLoggedIn = true
-            (activity as MainActivity).userRole = selectedRole
+//            (activity as MainActivity).isLoggedIn = true
+//            (activity as MainActivity).userRole = selectedRole
             (activity as MainActivity).updateBottomNavigationMenu()
 
             findNavController().navigate(com.example.ep2024.R.id.mainPageFragment)

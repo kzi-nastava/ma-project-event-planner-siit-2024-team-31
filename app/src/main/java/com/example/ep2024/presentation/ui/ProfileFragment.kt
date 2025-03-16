@@ -31,7 +31,7 @@ class ProfileFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        userRole = (activity as MainActivity).userRole
+//        userRole = (activity as MainActivity).userRole
 
         binding.textViewUserRole.text = "Роль: $userRole"
 

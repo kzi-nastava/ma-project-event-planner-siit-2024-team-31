@@ -8,7 +8,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User getUser(String id) {
-        return new User(1, "1234", Role.ADMIN);
+        return null;
     }
 
 }

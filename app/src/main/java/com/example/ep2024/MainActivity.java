@@ -1,14 +1,20 @@
 package com.example.ep2024;
 
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
-
 import com.example.ep2024.config.SecureStorage;
+import com.example.ep2024.di.AppComponent;
+import com.example.ep2024.di.DaggerAppComponent;
+import com.example.ep2024.di.modules.AppModule;
+import com.example.ep2024.di.modules.NetworkModule;
+import com.example.ep2024.di.modules.RepositoryModule;
+import com.example.ep2024.di.modules.SecureStorageModule;
 import com.example.ep2024.domain.model.Role;
+import com.example.ep2024.domain.model.user.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
 
 import javax.inject.Inject;
 
@@ -18,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     SecureStorage secureStorage;
     private NavController navController;
     private BottomNavigationView navView;
+    private AppComponent appComponent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +32,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main_activity);
 
         navView = findViewById(R.id.bottom_navigation);
-        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.nav_host_fragment);
+
+        appComponent = DaggerAppComponent.builder()
+                .networkModule(new NetworkModule())
+                .repositoryModule(new RepositoryModule())
+                .secureStorageModule(new SecureStorageModule())
+                .appModule(new AppModule(this))
+                        .build();
+
+        appComponent.inject(this);
+
         if (navHostFragment != null) {
             navController = navHostFragment.getNavController();
         }
@@ -62,33 +80,44 @@ public class MainActivity extends AppCompatActivity {
 
     public void updateBottomNavigationMenu() {
         navView.getMenu().clear();
-        var user = secureStorage.getUser();
-        if (!isLoggedIn) navView.inflateMenu(R.menu.bottom_nav_menu);
-        else {
-            switch (userRole) {
-                case ADMIN:
-                    navView.inflateMenu(R.menu.bottom_nav_menu_admin);
-                    break;
-                case USER:
-                    navView.inflateMenu(R.menu.bottom_nav_menu_ak);
-                    break;
-                case OD:
-                    navView.inflateMenu(R.menu.bottom_nav_menu_od);
-                    break;
-                case PUP:
-                    navView.inflateMenu(R.menu.bottom_nav_menu_pup);
-                    break;
-                default:
-                    navView.inflateMenu(R.menu.bottom_nav_menu);
-                    break;
+
+        String userJson = secureStorage.getUser();
+        if (userJson == null) {
+            navView.inflateMenu(R.menu.bottom_nav_menu);
+        } else {
+            User user = new Gson().fromJson(userJson, User.class);
+            Role userRole = user.getRole();
+            if (userRole != null) {
+                switch (userRole) {
+                    case ADMIN:
+                        navView.inflateMenu(R.menu.bottom_nav_menu_admin);
+                        break;
+                    case USER:
+                        navView.inflateMenu(R.menu.bottom_nav_menu_ak);
+                        break;
+                    case OD:
+                        navView.inflateMenu(R.menu.bottom_nav_menu_od);
+                        break;
+                    case PUP:
+                        navView.inflateMenu(R.menu.bottom_nav_menu_pup);
+                        break;
+                    default:
+                        navView.inflateMenu(R.menu.bottom_nav_menu);
+                        break;
+                }
+            } else {
+                navView.inflateMenu(R.menu.bottom_nav_menu);
             }
         }
     }
 
     public void logoutUser() {
-        isLoggedIn = false;
-        userRole = null;
+        secureStorage.clearUser();
         updateBottomNavigationMenu();
+    }
+
+    public AppComponent getAppComponent() {
+        return appComponent;
     }
 
 }

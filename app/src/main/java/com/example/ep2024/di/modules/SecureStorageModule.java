@@ -1,4 +1,4 @@
-package com.example.ep2024.di;
+package com.example.ep2024.di.modules;
 
 import android.content.Context;
 import com.example.ep2024.config.SecureStorage;
