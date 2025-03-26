@@ -64,12 +64,12 @@ class MyServicesFragment : Fragment() {
         }
 
         // Listen for the result from CreateServiceFragment
-        parentFragmentManager.setFragmentResultListener("newServiceRequestKey", this) { _, bundle ->
-            val newService = bundle.getParcelable<Service>("newServiceKey")
-            newService?.let {
-                addService(it)
-            }
-        }
+//        parentFragmentManager.setFragmentResultListener("newServiceRequestKey", this) { _, bundle ->
+//            val newService = bundle.getParcelable<Service>("newServiceKey")
+//            newService?.let {
+//                addService(it)
+//            }
+//        }
     }
 
     private fun loadServices() {
@@ -81,25 +81,7 @@ class MyServicesFragment : Fragment() {
 
     private fun getDummyServices(): List<Service> {
         return listOf(
-            Service(
-                id = "1",
-                name = "Catering Service",
-                description = "Delicious food",
-                characteristics = "Includes vegetarian options",
-                price = 1000.0,
-                discount = 10.0,
-                images = listOf(),
-                eventTypes = listOf("1", "2"),
-                categoryId = "1",
-                visibility = true,
-                availability = true,
-                bookingDuration = 60,
-                minParticipation = null,
-                maxParticipation = null,
-                bookingPeriod = 30,
-                cancellationPeriod = 7,
-                confirmationMethod = ConfirmationMethod.AUTOMATIC,
-            )
+            Service(1, "Service 1", "Description 1"),
         )
     }
 

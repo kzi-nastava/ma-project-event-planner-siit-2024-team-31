@@ -126,60 +126,7 @@ class CreateServiceFragment : Fragment() {
         binding.buttonSubmitService.setOnClickListener {
             // Implement form submission logic
             if (validateForm()) {
-                // Collect data from the form
-                val serviceName = binding.editTextServiceName.text.toString().trim()
-                val serviceDescription = binding.editTextServiceDescription.text.toString().trim()
-                val serviceCharacteristics = binding.editTextServiceCharacteristics.text.toString().trim()
-                val price = binding.editTextServicePrice.text.toString().trim().toDoubleOrNull() ?: 0.0
-                val discount = binding.editTextServiceDiscount.text.toString().trim().toDoubleOrNull() ?: 0.0
-                val categoryId = UUID.randomUUID().toString() // Replace with actual category ID
-                val visibility = binding.checkBoxVisibility.isChecked
-                val availability = binding.checkBoxAvailability.isChecked
-                val bookingDuration = binding.editTextBookingDuration.text.toString().trim().toIntOrNull()
-                val minParticipation = binding.editTextMinParticipation.text.toString().trim().toIntOrNull()
-                val maxParticipation = binding.editTextMaxParticipation.text.toString().trim().toIntOrNull()
-                val bookingPeriod = binding.editTextBookingPeriod.text.toString().trim().toIntOrNull() ?: 0
-                val cancellationPeriod = binding.editTextCancellationPeriod.text.toString().trim().toIntOrNull() ?: 0
-                val confirmationMethod = when (binding.radioGroupConfirmationMethod.checkedRadioButtonId) {
-                    binding.radioAutomatic.id -> ConfirmationMethod.AUTOMATIC
-                    binding.radioManual.id -> ConfirmationMethod.MANUAL
-                    else -> ConfirmationMethod.AUTOMATIC
-                }
 
-                val newService = Service(
-                    id = UUID.randomUUID().toString(),
-                    name = serviceName,
-                    description = serviceDescription,
-                    characteristics = serviceCharacteristics,
-                    price = price,
-                    discount = discount,
-                    images = listOf(), // Handle image uploads accordingly
-                    eventTypes = selectedEventTypes.map { eventType ->
-                        when (eventType) {
-                            "Wedding" -> "1"
-                            "Corporate" -> "2"
-                            "Birthday" -> "3"
-                            "Concert" -> "4"
-                            "Sports Event" -> "5"
-                            else -> "0"
-                        }
-                    },
-                    categoryId = categoryId,
-                    visibility = visibility,
-                    availability = availability,
-                    bookingDuration = bookingDuration,
-                    minParticipation = minParticipation,
-                    maxParticipation = maxParticipation,
-                    bookingPeriod = bookingPeriod,
-                    cancellationPeriod = cancellationPeriod,
-                    confirmationMethod = confirmationMethod,
-                )
-
-                // Send the new service back to MyServicesFragment
-                val resultBundle = Bundle().apply {
-                    putParcelable("newServiceKey", newService)
-                }
-                parentFragmentManager.setFragmentResult("newServiceRequestKey", resultBundle)
 
                 Toast.makeText(
                     requireContext(),

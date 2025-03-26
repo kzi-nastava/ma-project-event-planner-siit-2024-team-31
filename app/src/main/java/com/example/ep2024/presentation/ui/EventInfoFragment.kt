@@ -20,7 +20,7 @@ class EventInfoFragment : Fragment() {
 
         fun newInstance(event: Event) = EventInfoFragment().apply {
             arguments = Bundle().apply {
-                putParcelable(ARG_EVENT, event)
+
             }
         }
     }
@@ -43,8 +43,6 @@ class EventInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.textViewEventName.text = event.name
         binding.textViewEventDescription.text = event.description
-        binding.textViewEventCity.text = event.city
-        binding.textViewEventLocation.text = event.location
     }
 
     override fun onDestroyView() {

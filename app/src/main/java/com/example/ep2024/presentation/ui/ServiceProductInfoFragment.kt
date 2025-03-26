@@ -20,16 +20,12 @@ class ServiceProductInfoFragment : Fragment() {
 
         fun newInstance(service: Service) = ServiceProductInfoFragment().apply {
             arguments = Bundle().apply {
-                putParcelable(ARG_SERVICE, service)
             }
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            service = it.getParcelable(ARG_SERVICE)!!
-        }
     }
 
     override fun onCreateView(
@@ -43,9 +39,6 @@ class ServiceProductInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.textViewServiceName.text = service.name
         binding.textViewServiceDescription.text = service.description
-        binding.textViewServiceCharacteristics.text = service.characteristics
-        binding.textViewServicePrice.text = "$${service.price}"
-        binding.textViewServiceDiscount.text = "${service.discount}%"
     }
 
     override fun onDestroyView() {

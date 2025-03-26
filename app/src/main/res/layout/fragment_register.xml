@@ -11,16 +11,17 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+        <!-- Role spinner -->
         <Spinner
             android:id="@+id/spinnerUserRole"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <!-- For every role -->
         <EditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="emailAddress"
             android:hint="@string/hint_email"
             android:inputType="textEmailAddress" />
 
@@ -28,6 +29,7 @@
             android:id="@+id/editTextPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="password"
             android:hint="@string/hint_password"
             android:inputType="textPassword" />
 
@@ -35,12 +37,13 @@
             android:id="@+id/editTextConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="password"
             android:hint="@string/hint_confirm_password"
             android:inputType="textPassword" />
 
-        <!-- OD и AK -->
+        <!-- USER -->
         <LinearLayout
-            android:id="@+id/layoutODandAK"
+            android:id="@+id/layoutUser"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,33 +53,133 @@
                 android:id="@+id/editTextFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_first_name" />
+                android:autofillHints="name"
+                android:hint="@string/hint_first_name"
+                android:inputType="text" />
 
             <EditText
                 android:id="@+id/editTextLastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_last_name" />
+                android:autofillHints="name"
+                android:hint="@string/hint_last_name"
+                android:inputType="text" />
 
             <EditText
-                android:id="@+id/editTextAddress"
+                android:id="@+id/editTextCountry"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_address" />
+                android:hint="@string/hint_country"
+                android:autofillHints="postalAddress"
+                android:inputType="text" />
 
             <EditText
-                android:id="@+id/editTextPhone"
+                android:id="@+id/editTextCity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_phone"
+                android:hint="@string/hint_city"
+                android:autofillHints="postalAddress"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/editTextStreet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_street"
+                android:autofillHints="postalAddress"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/editTextZipCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_zip_code"
+                android:autofillHints="postalAddress"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editTextPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_phone_number"
+                android:autofillHints="phone"
                 android:inputType="phone" />
 
             <Button
-                android:id="@+id/buttonUploadProfilePicture"
+                android:id="@+id/buttonUploadAvatar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/button_upload_profile_picture" />
+                android:text="@string/button_upload_avatar" />
+        </LinearLayout>
 
+        <!-- OD -->
+        <LinearLayout
+            android:id="@+id/layoutOD"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/editTextFirstNameOD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_first_name"
+                android:autofillHints="name"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/editTextLastNameOD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_last_name" />
+
+            <!-- OD Address -->
+            <EditText
+                android:id="@+id/editTextCountryOD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_country"
+                android:autofillHints="postalAddress"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/editTextCityOD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_city"
+                android:autofillHints="postalAddress"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/editTextStreetOD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_street"
+                android:autofillHints="postalAddress"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/editTextZipCodeOD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_zip_code"
+                android:autofillHints="postalAddress"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editTextPhoneOD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_phone_number"
+                android:autofillHints="phone"
+                android:inputType="phone" />
+
+            <Button
+                android:id="@+id/buttonUploadImagesOD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_upload_images" />
         </LinearLayout>
 
         <!-- PUP -->
@@ -91,29 +194,60 @@
                 android:id="@+id/editTextCompanyName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_company_name" />
+                android:hint="@string/hint_company_name"
+                android:inputType="text"
+                android:autofillHints="name" />
 
             <EditText
-                android:id="@+id/editTextCompanyAddress"
+                android:id="@+id/editTextCountryPUP"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_company_address" />
+                android:hint="@string/hint_country"
+                android:autofillHints="postalAddress"
+                android:inputType="text" />
 
             <EditText
-                android:id="@+id/editTextCompanyPhone"
+                android:id="@+id/editTextCityPUP"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_phone"
-                android:inputType="phone" />
+                android:hint="@string/hint_city"
+                android:autofillHints="postalAddress"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/editTextStreetPUP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_street"
+                android:autofillHints="postalAddress"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/editTextZipCodePUP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_zip_code"
+                android:autofillHints="postalAddress"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editTextPhonePUP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_phone_number"
+                android:inputType="phone"
+                android:autofillHints="phone"/>
 
             <EditText
                 android:id="@+id/editTextCompanyDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_company_description" />
+                android:hint="@string/hint_company_description"
+                android:autofillHints="description"
+                android:inputType="text" />
 
             <Button
-                android:id="@+id/buttonUploadCompanyPhotos"
+                android:id="@+id/buttonUploadImagesPUP"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/button_upload_company_photos" />
