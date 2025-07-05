@@ -7,9 +7,4 @@ import javax.inject.Inject
 
 class LoginUseCase @Inject constructor(private val authRepository: AuthRepository) {
 
-    @Throws(Exception::class)
-    fun execute(req: LoginRequestDTO?): LoginResponseDTO {
-        return authRepository.login(req)
-    }
-
 }

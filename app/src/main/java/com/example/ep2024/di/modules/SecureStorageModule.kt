@@ -9,10 +9,4 @@ import javax.inject.Singleton
 @Module
 class SecureStorageModule {
 
-    @Provides
-    @Singleton
-    fun provideSecureStorage(context: Context?): SecureStorage {
-        return SecureStorage(context)
-    }
-
 }

@@ -7,9 +7,4 @@ import javax.inject.Inject
 
 class RegisterUseCase @Inject constructor(private val authRepository: AuthRepository) {
 
-    @Throws(Exception::class)
-    fun execute(req: RegisterRequestDTO?): CommonMessageResponseDTO {
-        return authRepository.signup(req)
-    }
-
 }

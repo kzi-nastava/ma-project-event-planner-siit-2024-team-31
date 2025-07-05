@@ -15,9 +15,6 @@ import javax.inject.Singleton
 @Component(modules = [RepositoryModule::class, SecureStorageModule::class, AppModule::class, NetworkModule::class])
 interface AppComponent {
 
-    fun inject(mainActivity: MainActivity?)
-    fun inject(createServiceFragment: CreateServiceFragment?)
-    fun inject(loginFragment: LoginFragment?)
-    fun inject(registerFragment: RegisterFragment?)
+    fun inject(mainActivity: MainActivity)
 
 }

@@ -35,7 +35,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
         languageVersion = "1.9"
     }
 
@@ -77,9 +77,8 @@ dependencies {
 
     //DI container
     implementation(libs.dagger)
-    annotationProcessor(libs.dagger.compiler)
-//    kapt(libs.dagger.compiler)
-
+//    annotationProcessor(libs.dagger.compiler)
+    kapt(libs.dagger.compiler)
 
     //HTTP client
     implementation(libs.retrofit)

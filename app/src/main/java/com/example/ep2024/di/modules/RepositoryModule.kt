@@ -12,16 +12,4 @@ import javax.inject.Singleton
 @Module
 class RepositoryModule {
 
-    @Singleton
-    @Provides
-    fun provideAuthRepository(apiService: ApiService?): AuthRepository {
-        return AuthRepositoryImpl(apiService)
-    }
-
-    @Singleton
-    @Provides
-    fun provideAuthApi(retrofit: Retrofit): AuthApi {
-        return retrofit.create(AuthApi::class.java)
-    }
-
 }
