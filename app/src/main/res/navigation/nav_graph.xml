@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/mainPageFragment"
-        android:name="com.example.ep2024.fragments.MainPageFragment"
+        android:name="com.example.ep2024.presentation.ui.MainPageFragment"
         android:label="Main Page">
         <action
             android:id="@+id/action_mainPage_to_login"
@@ -19,37 +19,37 @@
         <action
             android:id="@+id/action_mainPageFragment_to_eventInfoFragment"
             app:destination="@id/eventInfoFragment">
-            <argument
-                android:name="event"
-                app:argType="com.example.ep2024.models.Event" />
+<!--            <argument-->
+<!--                android:name="event"-->
+<!--                app:argType="com.example.ep2024.domain.model.event.Event" />-->
         </action>
         <action
             android:id="@+id/action_mainPageFragment_to_serviceProductInfoFragment"
             app:destination="@id/serviceProductInfoFragment">
-            <argument
-                android:name="service"
-                app:argType="com.example.ep2024.models.Service" />
+<!--            <argument-->
+<!--                android:name="service"-->
+<!--                app:argType="com.example.ep2024.domain.model.Service" />-->
         </action>
     </fragment>
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.ep2024.fragments.LoginFragment"
+        android:name="com.example.ep2024.presentation.ui.LoginFragment"
         android:label="Log in" />
 
     <fragment
         android:id="@+id/registrationFragment"
-        android:name="com.example.ep2024.fragments.RegisterFragment"
+        android:name="com.example.ep2024.presentation.ui.RegisterFragment"
         android:label="Sign up" />
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.ep2024.fragments.ProfileFragment"
+        android:name="com.example.ep2024.presentation.ui.ProfileFragment"
         android:label="Profile" />
 
     <fragment
         android:id="@+id/myServicesFragment"
-        android:name="com.example.ep2024.fragments.MyServicesFragment"
+        android:name="com.example.ep2024.presentation.ui.MyServicesFragment"
         android:label="My Services">
         <action
             android:id="@+id/action_myServicesFragment_to_editServiceFragment"
@@ -61,36 +61,36 @@
 
     <fragment
         android:id="@+id/editServiceFragment"
-        android:name="com.example.ep2024.fragments.EditServiceFragment"
+        android:name="com.example.ep2024.presentation.ui.EditServiceFragment"
         android:label="Service Editing">
-        <argument
-            android:name="service"
-            app:argType="com.example.ep2024.models.Service"
-            app:nullable="false" />
+<!--        <argument-->
+<!--            android:name="service"-->
+<!--            app:argType="com.example.ep2024.domain.model.Service"-->
+<!--            app:nullable="false" />-->
     </fragment>
 
 
     <fragment
         android:id="@+id/eventInfoFragment"
-        android:name="com.example.ep2024.fragments.EventInfoFragment"
+        android:name="com.example.ep2024.presentation.ui.EventInfoFragment"
         android:label="Event Info">
-        <argument
-            android:name="event"
-            app:argType="com.example.ep2024.models.Event" />
+<!--        <argument-->
+<!--            android:name="event"-->
+<!--            app:argType="com.example.ep2024.domain.model.event.Event" />-->
     </fragment>
 
     <fragment
         android:id="@+id/serviceProductInfoFragment"
-        android:name="com.example.ep2024.fragments.ServiceProductInfoFragment"
+        android:name="com.example.ep2024.presentation.ui.ServiceProductInfoFragment"
         android:label="Service Product Info">
-        <argument
-            android:name="service"
-            app:argType="com.example.ep2024.models.Service" />
+<!--        <argument-->
+<!--            android:name="service"-->
+<!--            app:argType="com.example.ep2024.domain.model.Service" />-->
     </fragment>
 
     <fragment
         android:id="@+id/createServiceFragment"
-        android:name="com.example.ep2024.fragments.CreateServiceFragment"
+        android:name="com.example.ep2024.presentation.ui.CreateServiceFragment"
         android:label="Create Service" />
 
 </navigation>

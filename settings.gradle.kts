@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "EP2024"
 include(":app")
- 
+include(":domain")
+include(":data")
