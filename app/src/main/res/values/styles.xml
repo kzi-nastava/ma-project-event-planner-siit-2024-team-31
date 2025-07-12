@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Card.Event" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">12dp</item>              <!-- rounded-xl -->
+        <item name="cardElevation">8dp</item>                  <!-- shadow-lg -->
+        <item name="android:layout_margin">8dp</item>
+        <item name="cardBackgroundColor">@color/background_white</item>
+        <item name="cardMaxElevation">16dp</item>              <!-- hover:shadow-xl эффект -->
+    </style>
+
+    <style name="Card.Service" parent="Card.Event">
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">6dp</item>
+        <item name="android:layout_margin">6dp</item>
+    </style>
+
+    <style name="Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/background_white</item>
+        <item name="backgroundTint">@color/primary_blue</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="elevation">4dp</item>
+    </style>
+
+    <style name="Button.Secondary" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/primary_blue</item>
+        <item name="strokeColor">@color/primary_blue</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="EditText.Outlined" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/primary_blue</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <style name="Text.Title" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/gray_900</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lineHeight">28sp</item>
+    </style>
+
+    <style name="Text.Subtitle" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textColor">@color/gray_700</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:lineHeight">24sp</item>
+    </style>
+
+    <style name="Text.Body" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/gray_600</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineHeight">20sp</item>
+    </style>
+
+    <style name="Text.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/gray_500</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineHeight">16sp</item>
+    </style>
+
+    <style name="BadgeStatus">
+        <item name="android:background">@drawable/badge_background</item>
+        <item name="android:textColor">@color/background_white</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="Container.Gradient" parent="">
+        <item name="android:background">@drawable/gradient_background</item>
+    </style>
+
+</resources>

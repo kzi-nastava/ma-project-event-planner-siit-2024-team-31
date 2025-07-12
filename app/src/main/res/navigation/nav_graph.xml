@@ -19,16 +19,16 @@
         <action
             android:id="@+id/action_mainPageFragment_to_eventInfoFragment"
             app:destination="@id/eventInfoFragment">
-            <argument
-                android:name="event"
-                app:argType="com.example.ep2024.domain.model.Event" />
+<!--            <argument-->
+<!--                android:name="event"-->
+<!--                app:argType="com.example.ep2024.domain.model.event.Event" />-->
         </action>
         <action
             android:id="@+id/action_mainPageFragment_to_serviceProductInfoFragment"
             app:destination="@id/serviceProductInfoFragment">
-            <argument
-                android:name="service"
-                app:argType="com.example.ep2024.domain.model.Service" />
+<!--            <argument-->
+<!--                android:name="service"-->
+<!--                app:argType="com.example.ep2024.domain.model.Service" />-->
         </action>
     </fragment>
 
@@ -63,10 +63,10 @@
         android:id="@+id/editServiceFragment"
         android:name="com.example.ep2024.presentation.ui.EditServiceFragment"
         android:label="Service Editing">
-        <argument
-            android:name="service"
-            app:argType="com.example.ep2024.domain.model.Service"
-            app:nullable="false" />
+<!--        <argument-->
+<!--            android:name="service"-->
+<!--            app:argType="com.example.ep2024.domain.model.Service"-->
+<!--            app:nullable="false" />-->
     </fragment>
 
 
@@ -74,18 +74,18 @@
         android:id="@+id/eventInfoFragment"
         android:name="com.example.ep2024.presentation.ui.EventInfoFragment"
         android:label="Event Info">
-        <argument
-            android:name="event"
-            app:argType="com.example.ep2024.domain.model.Event" />
+<!--        <argument-->
+<!--            android:name="event"-->
+<!--            app:argType="com.example.ep2024.domain.model.event.Event" />-->
     </fragment>
 
     <fragment
         android:id="@+id/serviceProductInfoFragment"
         android:name="com.example.ep2024.presentation.ui.ServiceProductInfoFragment"
         android:label="Service Product Info">
-        <argument
-            android:name="service"
-            app:argType="com.example.ep2024.domain.model.Service" />
+<!--        <argument-->
+<!--            android:name="service"-->
+<!--            app:argType="com.example.ep2024.domain.model.Service" />-->
     </fragment>
 
     <fragment

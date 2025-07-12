@@ -3,14 +3,18 @@ package com.example.ep2024.di.modules
 import android.content.Context
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
-class AppModule(private val context: Context) {
+@InstallIn(SingletonComponent::class)
+object AppModule {
 
     @Provides
     @Singleton
-    fun provideContext(): Context {
+    fun provideContext(@ApplicationContext context: Context): Context {
         return context
     }
 

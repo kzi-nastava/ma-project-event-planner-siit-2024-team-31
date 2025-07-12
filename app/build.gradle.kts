@@ -2,8 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.hilt.android)
     id("kotlin-parcelize")
-    id("kotlin-kapt")
+    alias(libs.plugins.ksp)
     id("androidx.navigation.safeargs.kotlin") version "2.8.9"
 }
 
@@ -46,17 +47,16 @@ android {
 
 }
 
-kapt {
-    keepJavacAnnotationProcessors = true
-    useBuildCache = false
-}
-
 dependencies {
+
+    // Dependency on data and domain modules
+    implementation(project(":data"))
+    implementation(project(":domain"))
 
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.cardview)
-    implementation(libs.androidx.navigation.fragment.ktx.v253)
-    implementation(libs.androidx.navigation.ui.ktx.v253)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.material)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -66,7 +66,22 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.appcompat)
     implementation(libs.androidx.fragment)
+
+    // Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.logging.interceptor)
+
+    // Security
+    implementation(libs.androidx.security.crypto)
+
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -74,18 +89,4 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-    //DI container
-    implementation(libs.dagger)
-//    annotationProcessor(libs.dagger.compiler)
-    kapt(libs.dagger.compiler)
-
-    //HTTP client
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation(libs.logging.interceptor)
-
-    //Security
-    implementation(libs.androidx.security.crypto)
-    implementation(libs.security.crypto)
 }
