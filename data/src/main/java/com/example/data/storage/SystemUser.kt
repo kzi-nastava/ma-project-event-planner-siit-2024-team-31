@@ -1,4 +1,6 @@
 package com.example.data.storage
 
-class SystemUser {
-}
+data class SystemUser (
+    val token: String,
+    val role: String
+)
