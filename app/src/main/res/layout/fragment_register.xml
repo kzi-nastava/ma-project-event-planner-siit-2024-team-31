@@ -1,263 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/scrollViewRegister"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.fragments.auth.RegisterFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayoutRegister"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
-        <!-- Role spinner -->
-        <Spinner
-            android:id="@+id/spinnerUserRole"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/username_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        app:layout_constraintBottom_toTopOf="@id/email_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="8dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/editTextEmail"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints="emailAddress"
-            android:hint="@string/hint_email"
             android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/editTextPassword"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_layout"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints="password"
-            android:hint="@string/hint_password"
             android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
-            android:id="@+id/editTextConfirmPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="password"
-            android:hint="@string/hint_confirm_password"
-            android:inputType="textPassword" />
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_layout" />
 
-        <!-- USER -->
-        <LinearLayout
-            android:id="@+id/layoutUser"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
+    <TextView
+        android:id="@+id/go_to_login_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Already have an account? Login"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/register_button" />
 
-            <EditText
-                android:id="@+id/editTextFirstName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints="name"
-                android:hint="@string/hint_first_name"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/editTextLastName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints="name"
-                android:hint="@string/hint_last_name"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/editTextCountry"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_country"
-                android:autofillHints="postalAddress"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/editTextCity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_city"
-                android:autofillHints="postalAddress"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/editTextStreet"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_street"
-                android:autofillHints="postalAddress"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/editTextZipCode"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_zip_code"
-                android:autofillHints="postalAddress"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editTextPhoneNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_phone_number"
-                android:autofillHints="phone"
-                android:inputType="phone" />
-
-            <Button
-                android:id="@+id/buttonUploadAvatar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/button_upload_avatar" />
-        </LinearLayout>
-
-        <!-- OD -->
-        <LinearLayout
-            android:id="@+id/layoutOD"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
-
-            <EditText
-                android:id="@+id/editTextFirstNameOD"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_first_name"
-                android:autofillHints="name"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/editTextLastNameOD"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_last_name" />
-
-            <!-- OD Address -->
-            <EditText
-                android:id="@+id/editTextCountryOD"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_country"
-                android:autofillHints="postalAddress"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/editTextCityOD"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_city"
-                android:autofillHints="postalAddress"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/editTextStreetOD"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_street"
-                android:autofillHints="postalAddress"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/editTextZipCodeOD"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_zip_code"
-                android:autofillHints="postalAddress"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editTextPhoneOD"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_phone_number"
-                android:autofillHints="phone"
-                android:inputType="phone" />
-
-            <Button
-                android:id="@+id/buttonUploadImagesOD"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/button_upload_images" />
-        </LinearLayout>
-
-        <!-- PUP -->
-        <LinearLayout
-            android:id="@+id/layoutPUP"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone">
-
-            <EditText
-                android:id="@+id/editTextCompanyName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_company_name"
-                android:inputType="text"
-                android:autofillHints="name" />
-
-            <EditText
-                android:id="@+id/editTextCountryPUP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_country"
-                android:autofillHints="postalAddress"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/editTextCityPUP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_city"
-                android:autofillHints="postalAddress"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/editTextStreetPUP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_street"
-                android:autofillHints="postalAddress"
-                android:inputType="text" />
-
-            <EditText
-                android:id="@+id/editTextZipCodePUP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_zip_code"
-                android:autofillHints="postalAddress"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/editTextPhonePUP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_phone_number"
-                android:inputType="phone"
-                android:autofillHints="phone"/>
-
-            <EditText
-                android:id="@+id/editTextCompanyDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_company_description"
-                android:autofillHints="description"
-                android:inputType="text" />
-
-            <Button
-                android:id="@+id/buttonUploadImagesPUP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/button_upload_company_photos" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/buttonRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/button_register" />
-
-    </LinearLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -58,5 +58,6 @@
     <string name="hint_phone_number">Phone number</string>
     <string name="button_upload_avatar">Upload profile avatar</string>
     <string name="button_upload_images">Upload images</string>
+    <string name="home_screen">Home Screen</string>
 
 </resources>
