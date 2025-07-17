@@ -31,4 +31,11 @@
     <color name="blue_100">#DBEAFE</color>
     <color name="colorPrimary">#6366f1</color>
 
+    <!-- Frontend Colors -->
+    <color name="frontend_blue">#3b82f6</color>
+    <color name="frontend_purple">#8b5cf6</color>
+    <color name="frontend_blue_dark">#2563eb</color>
+    <color name="frontend_purple_dark">#7c3aed</color>
+    <color name="frontend_gray_background">#f1f5f9</color>
+
 </resources>
