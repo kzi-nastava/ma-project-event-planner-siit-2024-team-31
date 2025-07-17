@@ -7,6 +7,7 @@ coreKtx = "1.16.0"
 espressoCore = "3.6.1"
 fragment = "1.8.8"
 hilt = "2.56"
+javaxInject = "1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 kotlin = "2.0.0"
@@ -20,6 +21,7 @@ securityCrypto = "1.1.0-beta01"
 activityCompose = "1.10.1"
 okhttp = "4.12.0"
 datastore = "1.0.0"
+circleimageview = "3.1.0"
 
 [libraries]
 # AndroidX & Google Material
@@ -29,9 +31,11 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 androidx-fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+javax-inject = { module = "javax.inject:javax.inject", version.ref = "javaxInject" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
+circleimageview = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleimageview" }
 
 # Navigation
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
