@@ -13,7 +13,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.ep2024.R
 import com.example.ep2024.databinding.FragmentLoginBinding
-import com.example.ep2024.ui.viewModels.auth.AuthViewModel
+import com.example.ep2024.ui.viewModels.auth.LoginViewModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
@@ -24,7 +24,7 @@ class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: AuthViewModel by activityViewModels()
+    private val viewModel: LoginViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,7 +43,7 @@ class LoginFragment : Fragment() {
             viewModel.login(email, password)
         }
 
-        binding.tvGoToRegister.setOnClickListener {
+        binding.btnGoToRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_register_nav_graph)
         }
 
