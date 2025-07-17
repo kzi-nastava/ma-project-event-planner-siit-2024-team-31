@@ -68,6 +68,7 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.fragment)
+    implementation(libs.circleimageview)
 
     // Hilt
     implementation(libs.hilt.android)
@@ -75,8 +76,8 @@ dependencies {
 
     // Retrofit
     implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation(libs.logging.interceptor)
+    implementation(libs.retrofit.converter.gson)
+    implementation(libs.okhttp.logging.interceptor)
 
     // Security
     implementation(libs.androidx.security.crypto)
