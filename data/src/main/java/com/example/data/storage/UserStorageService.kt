@@ -6,6 +6,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
+import com.example.domain.entity.user.Role
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
@@ -23,20 +24,20 @@ class UserStorageService @Inject constructor(@ApplicationContext private val con
     }
 
     val userFlow: Flow<SystemUser?> = context.dataStore.data
-            .map { preferences ->
+        .map { preferences ->
             val token = preferences[PreferencesKeys.USER_TOKEN]
-        val role = preferences[PreferencesKeys.USER_ROLE]
-        if (token != null && role != null) {
-            SystemUser(token = token, role = role)
-        } else {
-            null
+            val roleString = preferences[PreferencesKeys.USER_ROLE]
+            if (token != null && roleString != null) {
+                SystemUser(token = token, role = Role.valueOf(roleString))
+            } else {
+                null
+            }
         }
-    }
 
     suspend fun saveUser(user: SystemUser) {
         context.dataStore.edit { preferences ->
-                preferences[PreferencesKeys.USER_TOKEN] = user.token
-            preferences[PreferencesKeys.USER_ROLE] = user.role
+            preferences[PreferencesKeys.USER_TOKEN] = user.token
+            preferences[PreferencesKeys.USER_ROLE] = user.role.name
         }
     }
 
