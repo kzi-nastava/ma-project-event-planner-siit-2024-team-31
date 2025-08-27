@@ -15,6 +15,8 @@ ksp = "2.0.0-1.0.22"
 lifecycleRuntimeKtx = "2.9.1"
 material = "1.12.0"
 navigation = "2.9.1"
+navigationCompose = "2.9.1"
+hiltNavigationCompose = "1.2.0"
 recyclerview = "1.4.0"
 retrofit = "2.11.0"
 securityCrypto = "1.1.0-beta01"
@@ -22,6 +24,7 @@ activityCompose = "1.10.1"
 okhttp = "4.12.0"
 datastore = "1.0.0"
 circleimageview = "3.1.0"
+coil = "2.7.0"
 
 [libraries]
 # AndroidX & Google Material
@@ -30,16 +33,21 @@ androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "card
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 javax-inject = { module = "javax.inject:javax.inject", version.ref = "javaxInject" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
 circleimageview = { group = "de.hdodenhof", name = "circleimageview", version.ref = "circleimageview" }
+androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycleRuntimeKtx" }
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 
 # Navigation
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+navigationComposeLib = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 
 # Compose
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
@@ -52,6 +60,8 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 # Dependency Injection - Hilt
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+hiltNavigationComposeLib = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
 
 # Networking - Retrofit
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
